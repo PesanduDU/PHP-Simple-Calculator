@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
 
+    <!-- Link the stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,7 +34,7 @@
                 <button type="button" onclick="addVal('*')">*</button>
                 <button type="button" class="bg-red" onclick="clearVal()">C</button>
                 <button type="button" onclick="addVal('0')">0</button>
-                <button type="button" name="equal" class="bg-green">=</button>
+                <button type="submit" name="equal" class="bg-green">=</button>
                 <button type="button" onclick="addVal('/')">/</button>
             </div>
         </div>
@@ -42,15 +43,23 @@
 
     <script>
         function addVal(value) {
-            const resultField = document.querySelector('.result');
+            const resultField = document.querySelector('[name="expression"]');
             resultField.value += value;
         }
 
         function clearVal() {
-            const resultField = document.querySelector('.result');
+            const resultField = document.querySelector('[name="expression"]');
             resultField.value = '';
         }
     </script>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['equal'])) {
+        $currentVal = $_POST['expression'];
+        $resultVal = eval("return $currentVal;");
+        echo "<script>document.querySelector('.result').value = $resultVal;</script>";
+    }
+    ?>
 </body>
 
 </html>
