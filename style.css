@@ -22,7 +22,13 @@
   }
   
   .result {
-    font-size: 20px;
+    font-size: 50px;
+    color:#4c4c4c;
+    width: 95%;
+    height: 80%;
+    text-align: right;
+    resize: none;
+    border: none;
   }
   
   .buttons {

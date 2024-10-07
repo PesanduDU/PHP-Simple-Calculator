@@ -11,32 +11,52 @@
 </head>
 
 <body>
-    <div class="calculator">
 
-       <h3 style="color: #7f7979;">Calculator : V.0.1</h3>
+    <?php
 
-        <div class="output">
-            <span class="result"></span>
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        $input = "";
+
+
+
+
+
+    }
+
+
+    ?>
+
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+
+        <div class="calculator">
+            <h3 style="color: #7f7979;">Calculator : V.0.1</h3>
+
+            <div class="output">
+                <!-- <span class="result" name="expression">1234</span> -->
+                 <!-- <input type="text" name="expression"  class="result"> -->
+                <textarea name="expression" id="" class="result">1234</textarea>
+            </div>
+            <div class="buttons">
+                <button name="clicked" value="1" onclick="">1</button>
+                <button name="clicked" value="" onclick="">2</button>
+                <button name="clicked" value="" onclick="">3</button>
+                <button name="clicked" value="" onclick="">+</button>
+                <button name="clicked" value="" onclick="">4</button>
+                <button name="clicked" value="" onclick="">5</button>
+                <button name="clicked" value="" onclick="">6</button>
+                <button name="clicked" value="" onclick="">-</button>
+                <button name="clicked" value="" onclick="">7</button>
+                <button name="clicked" value="" onclick="">8</button>
+                <button name="clicked" value="" onclick="">9</button>
+                <button name="clicked" value="" onclick="">*</button>
+                <button class="bg-red" value="" onclick="">C</button>
+                <button name="clicked" value="" onclick="">0</button>
+                <button type="submit" name="equal" class="bg-green">=</button>
+                <button name="clicked" value="" onclick="">/</button>
+            </div>
         </div>
-        <div class="buttons">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button>
-            <button class="bg-red">C</button>
-            <button>0</button>
-            <button class="bg-green">=</button>
-            <button>/</button>
-        </div>
-    </div>
+
+    </form>
 </body>
 
 </html>
